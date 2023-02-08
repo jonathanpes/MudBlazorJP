@@ -232,7 +232,10 @@ namespace MudBlazor
             if (null != removedSorts && removedSorts.Contains(Column.Field))
                 MarkAsUnsorted();
             else if (activeSorts.TryGetValue(Column.Field, out var sortDefinition))
+            {
                 Column.SortIndex = sortDefinition.Index;
+                DataGrid.ExternalStateHasChanged();
+            }
         }
 
         private void OnSelectedAllItemsChanged(bool value)

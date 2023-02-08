@@ -832,6 +832,7 @@ namespace MudBlazor
                 FieldType = column?.FieldType
             });
             _filtersMenuVisible = true;
+            GroupItems();
             StateHasChanged();
         }
 
@@ -858,6 +859,8 @@ namespace MudBlazor
                 FieldType = column?.FieldType,
             });
             _filtersMenuVisible = true;
+            GroupItems();
+
             StateHasChanged();
         }
 
@@ -1218,6 +1221,7 @@ namespace MudBlazor
 
         internal void ExternalStateHasChanged()
         {
+            GroupItems();
             StateHasChanged();
         }
 
